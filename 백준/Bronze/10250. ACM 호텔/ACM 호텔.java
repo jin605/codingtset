@@ -10,28 +10,19 @@ public class Main {
         int t = Integer.parseInt(br.readLine());
 
         StringBuilder sb = new StringBuilder();
-
-        for (int i = 0; i < t; i ++){
+        for (int i = 0; i < t; i++){
             StringTokenizer st = new StringTokenizer(br.readLine());
             int h = Integer.parseInt(st.nextToken());
             int w = Integer.parseInt(st.nextToken());
             int n = Integer.parseInt(st.nextToken());
 
-            if (h*w >= n){
-                int floor,num;
+            if ((h*w) >= n){
 
-                if (n%h == 0){
-
-                    floor = h;
-                    num = n / h;
-
+                if (n % h == 0){
+                    sb.append(h).append(String.format("%02d",(n/h))).append("\n");
                 } else {
-                    floor = n % h;
-                    num = (n / h) + 1;
+                    sb.append(n % h).append(String.format("%02d",(n/h)+1)).append("\n");
                 }
-
-                sb.append(String.format("%d%02d\n",floor,num));
-
             }
         }
 
